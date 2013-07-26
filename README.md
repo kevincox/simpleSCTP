@@ -19,3 +19,9 @@ linux so it is hard to test sending large messages when it isn't supported).
 
 See an example client/server in the test directory.  They simply send data from
 client to server.  Not too useful but shows the API.
+
+## Example Install
+
+	$ clang++ -std=c++11 -fPIC -shared -lsctp src/sctp.cpp -Wl,-soname,libeasysctp.so.0 -o libsctp.so
+	# install -d libsctp.so /usr/local/lib/
+	# install -D src/sctp.hpp /usr/local/include/easysctp/sctp.hpp
